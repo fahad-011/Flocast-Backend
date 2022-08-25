@@ -13,18 +13,19 @@ app.use(express.json({ limit: "50mb" }));
 app.get("/", (req, res, next) => {
   res.send("Flocast API running");
 });
-app.post("/submit", (req, res) => {
-  if (req.body) {
-    console.log(req.body.name, req.body.level);
-    return res.status(201).send("Post Data Successfully !!");
-  }
-  return res.status(500).send("No Data Received !!");
-});
+// app.post("/submit", (req, res) => {
+//   if (req.body) {
+//     console.log(req.body.name, req.body.level);
+//     return res.status(201).send("Post Data Successfully !!");
+//   }
+//   return res.status(500).send("No Data Received !!");
+// });
 
 // Connecting Routes
 app.use("/govUser", require("./routes/auth"));
 app.use("/citizen", require("./routes/citizen"));
 app.use("/sms", require("./routes/sendSMS"));
+app.use("/image", require("./routes/crowdData"));
 // app.use("/api/private", require("./routes/private"));
 
 // Error Handler Middleware
