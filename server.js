@@ -15,10 +15,11 @@ app.get("/", (req, res, next) => {
 });
 
 // Connecting Routes
-app.use("/govUser", require("./routes/auth"));
+app.use("/govUser", require("./routes/govAuth"));
 app.use("/citizen", require("./routes/citizen"));
 app.use("/sms", require("./routes/sendSMS"));
 app.use("/image", require("./routes/crowdData"));
+// app.use("/flood", require("./routes/crowdData"));
 // app.use("/api/private", require("./routes/private"));
 
 // Error Handler Middleware

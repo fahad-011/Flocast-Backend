@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 const ErrorResponse = require("../utils/errorResponse");
-const User = require("../models/GovUser");
+const User = require("../models/GovSchema");
 const sendEmail = require("../utils/sendEmail");
 
 // @desc    Login user

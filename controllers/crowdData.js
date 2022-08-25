@@ -1,7 +1,5 @@
-const crypto = require("crypto");
 const ErrorResponse = require("../utils/errorResponse");
-const Crowddata = require("../models/CrowdData");
-const sendEmail = require("../utils/sendEmail");
+const Crowddata = require("../models/CrowdDataSchema");
 const axios = require("axios");
 
 // @desc    Login user
@@ -58,3 +56,19 @@ exports.upload = async (req, res, next) => {
     return res.status(500).json({ success: false, message: err });
   }
 };
+
+exports.getForecasts = async (req, res) => {
+  try {
+    const CrowdDatas = await Crowddata.find({});
+    if (!CrowdDatas) return res.status(400).send({ message: "Invalid link" });
+    // console.log(NFTs);
+    else {
+      res.status(200).send(CrowdDatas);
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(500).send({ message: "Internal Server Error" });
+  }
+};
+
+

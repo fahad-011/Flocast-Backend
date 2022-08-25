@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 require("../config/db");
-const Citizen = require("../models/CitizenDetails");
+const Citizen = require("../models/CitizenDetailSchema");
 const ErrorResponse = require("../utils/errorResponse");
 
 exports.create = async (req, res, next) => {
