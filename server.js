@@ -13,13 +13,6 @@ app.use(express.json({ limit: "50mb" }));
 app.get("/", (req, res, next) => {
   res.send("Flocast API running");
 });
-// app.post("/submit", (req, res) => {
-//   if (req.body) {
-//     console.log(req.body.name, req.body.level);
-//     return res.status(201).send("Post Data Successfully !!");
-//   }
-//   return res.status(500).send("No Data Received !!");
-// });
 
 // Connecting Routes
 app.use("/govUser", require("./routes/auth"));
