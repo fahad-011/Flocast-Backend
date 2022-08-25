@@ -6,10 +6,10 @@ const Citizen = require("../models/CitizenDetails");
 const ErrorResponse = require("../utils/errorResponse");
 
 exports.create = async (req, res, next) => {
-    const { fullname, phone, dist } = req.body;
+    const { fullname, phone, dist, state } = req.body;
 
     // Check if email and password is provided
-    if (!fullname || !phone || !dist) {
+    if (!fullname || !phone || !dist || !state) {
         return next(new ErrorResponse("Please provide all details", 400));
     }
 
@@ -22,6 +22,7 @@ exports.create = async (req, res, next) => {
                 fullname,
                 phone,
                 dist,
+                state
             });
             await citizenData.save();
             return res.status(201).json({ message: "User Created" });

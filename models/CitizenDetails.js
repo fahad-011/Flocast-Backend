@@ -14,9 +14,11 @@ const CitizenDetailsSchema = new mongoose.Schema({
     dist: {
         type: String,
         required: [true, "Please provide a district name"],
-
-    }
-
+    },
+    state: {
+        type: String,
+        required: [true, "Please provide a state name"],
+    },
 });
 
 const CitizenDetails = mongoose.model("CITIZEN", CitizenDetailsSchema);
