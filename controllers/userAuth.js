@@ -1,11 +1,12 @@
 const crypto = require("crypto");
 const ErrorResponse = require("../utils/errorResponse");
-const User = require("../models/GovSchema");
+const User = require("../models/UserSchema");
 const sendEmail = require("../utils/sendEmail");
 
 // @desc    Login user
 exports.login = async (req, res, next) => {
     const { email, password } = req.body;
+    console.log(req.body)
 
     // Check if email and password is provided
     if (!email || !password) {
