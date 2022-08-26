@@ -16,6 +16,7 @@ app.get("/", (req, res, next) => {
 
 // Connecting Routes
 app.use("/govUser", require("./routes/govAuth"));
+app.use("/user", require("./routes/userAuth"));
 app.use("/citizen", require("./routes/citizen"));
 app.use("/sms", require("./routes/sendSMS"));
 app.use("/image", require("./routes/crowdData"));
