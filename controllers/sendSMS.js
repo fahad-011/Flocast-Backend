@@ -26,6 +26,4 @@ exports.sendsms = async (req, res) => {
             .then(message => console.log(message))
             .done();
     }
-    // console.log(accountSid)
-
 };
